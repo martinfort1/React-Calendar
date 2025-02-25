@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginPage } from '../auth/pages/LoginPage';
 import { CalendarPage } from '../calendar/pages/CalendarPage';
@@ -8,7 +8,7 @@ export const AppRouter = () => {
 
   const { status, checkAuthToken } = useAuthStore();
   // const authStatus = 'not-authenticated'; //'not-authenticated'
-  useEffect(() => {
+  useEffect( () => {
     checkAuthToken();
   }, [])
   
