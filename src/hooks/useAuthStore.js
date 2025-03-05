@@ -9,7 +9,6 @@ export const useAuthStore = ( ) => {
     const dispatch = useDispatch();
 
     const startLogin = async ({ email, password})=> {
-        console.log({ email, password });
 
         dispatch( onChecking() );
         
