@@ -22,10 +22,10 @@ export const authSlice = createSlice({
         state.status = 'not-authenticated',
         state.user = {},
         state.errorMessage = payload;
+    },
+    clearErrorMessage: ( state ) => {
+        state.errorMessage = undefined;
     }
-   },
-   clearErrorMessage: ( state ) => {
-    state.errorMessage = undefined;
    }
 })
 
