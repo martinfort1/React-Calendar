@@ -26,7 +26,6 @@ export const useAuthStore = ( ) => {
     };
 
     const startRegister = async({name, email, password}) => {
-        console.log({name, email, password});
         dispatch( onChecking() );
 
         try{
@@ -34,7 +33,6 @@ export const useAuthStore = ( ) => {
             localStorage.setItem('token', data.token);
             dispatch( onLogin({ name: data.name, uid: data.uid }));
         } catch( error ){
-            console.log(error.response.data?.msg || '--');
             dispatch( onLogout(error.response.data?.msg) );
             setTimeout( () => {
                 dispatch( clearErrorMessage() );

@@ -10,6 +10,15 @@
 require('dotenv').config({
     path: '.env.test'
 });
+import { TextEncoder, TextDecoder } from 'util';
+
+if (typeof global.TextEncoder === 'undefined') {
+    global.TextEncoder = TextEncoder;
+  }
+  
+  if (typeof global.TextDecoder === 'undefined') {
+    global.TextDecoder = TextDecoder;
+  }
 
 // Realizar el mock completo de las variables de entorno
 jest.mock('./src/helpers/getEnvVariables', () => ({
